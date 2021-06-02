@@ -1,0 +1,17 @@
+{
+  "name": "bonitasoft-front",
+  "version": "1.0.0",
+  "description": "BonitaSoft: Front-end challenge by Ibrahima",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "author": "Ibrahima Timera",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "typescript": "^4.3.2"
+  }
+}
