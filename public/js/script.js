@@ -1,6 +1,6 @@
-import { randomColor } from './utils.js';
 
 function initDraw() {
+    var utils = require('./bonita-utils.ts');
     var canvas = document.getElementById('shape-area')
     var drawing = false
     var rotation = false
@@ -46,7 +46,7 @@ function initDraw() {
             element.style.width = '0px'
             element.style.height = '0px'
             element.style.border = '1px solid'
-            element.style.backgroundColor = randomColor()
+            element.style.backgroundColor = utils.randomColor()
             element.style.cursor = "pointer"
             element.style.opacity = '1';
             element.addEventListener("dblclick",

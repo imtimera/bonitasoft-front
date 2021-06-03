@@ -1,8 +1,10 @@
 const express = require('express')
+const utils = require('./dist/bonita-utils');
 const app = express()
 const port = 3000
 const appName = 'Bonitasoft Front-end'
 
+app.set('utils', utils)
 app.get('/', (req, res) => {
   res.sendFile(__dirname + '/public/html/index.html');
 })
