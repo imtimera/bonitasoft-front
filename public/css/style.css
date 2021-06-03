@@ -1,8 +1,11 @@
 .shape-area {
-  /*background-color: #fbe3e3;*/
+  background-color: #fbe3e3;
   width: 100%;
   height: 100%;
   border: 1px solid;
   min-height: 36em;
   cursor: crosshair;
+}
+.hide {
+  opacity: 0;
 }
