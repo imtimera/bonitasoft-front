@@ -1,5 +1,5 @@
-import * as utils from './js/bonita-utils.ts'
-import * as appConst from './js/appConst.ts'
+import {randomColor} from './ts/bonita-utils.ts'
+import * as appConst from './ts/appConst.ts'
 
 function initDrawRectangles() {
     var element
@@ -43,7 +43,7 @@ function initDrawRectangles() {
             element.style.width = '0px'
             element.style.height = '0px'
             element.style.border = '1px solid'
-            element.style.backgroundColor = utils.randomColor()
+            element.style.backgroundColor = randomColor()
             element.style.cursor = "pointer"
             element.style.opacity = '1';
             element.addEventListener("dblclick",
