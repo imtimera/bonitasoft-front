@@ -1,22 +1,19 @@
+import * as utils from './js/bonita-utils.ts'
+import * as appConst from './js/appConst.ts'
 
-function initDraw() {
-    var utils = require('./bonita-utils.ts');
+function initDrawRectangles() {
+    var element
     var canvas = document.getElementById('shape-area')
-    var drawing = false
-    var rotation = false
     var tabItemToRotate = []
     var tabItemToRemove = []
     var index = 0
-    const shapeArea = 'shape-area'
-    const rectangle = 'rectangle'
-    const px = 'px'
 
-    var shape = {
-        x: 0,
-        y: 0,
-        startX: 0,
-        startY: 0
-    }
+    var shapeArea = appConst.shapeArea
+    var rectangle = appConst.rectangle
+    var px = appConst.px
+    var drawing = appConst.drawing
+    var shape = appConst.shape
+
     function setMousePosition(e) {
         var ev = e || window.event
         if (ev.pageX) {
@@ -61,9 +58,11 @@ function initDraw() {
                         item.style.WebkitTransitionDuration = duration
                         item.style.webkitTransform = rotationAngle
                         tabItemToRotate.splice(tabItemToRotate.indexOf(item))
-                        resolve(true)
+                        resolve({ 'tabItemToRotate': tabItemToRotate, 'tabItemToRemove': tabItemToRemove })
                     }, timeOut))
                     promise.then((value) => {
+                        tabItemToRotate = value.tabItemToRotate
+                        tabItemToRemove = value.tabItemToRemove
                         if (tabItemToRotate.length == 0) {
                             tabItemToRemove.forEach(function (rect) {
                                 rect.style.opacity = '0'
@@ -91,14 +90,12 @@ function initDraw() {
 
         }
     }
-    canvas.onmouseup = function () {
-        drawing = false
-
-    }
+    canvas.onmouseup = () => drawing = false
+    
 
 }
 
 
 
 
-initDraw()
+initDrawRectangles()

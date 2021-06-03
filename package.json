@@ -2,12 +2,13 @@
   "name": "bonitasoft-front",
   "version": "1.0.0",
   "description": "BonitaSoft: Front-end challenge by Ibrahima",
-  "main": "index.js",
-  "type": "module",
+  "private": true,
   "scripts": {
-    "start": "tsc && node app.js --experimental-modules",
-    "test": "npm test"
+    "start": "webpack && tsc && node app.js --experimental-modules",
+    "test": "npm test",
+    "build": "webpack"
   },
+  "keywords": [],
   "author": "Ibrahima Timera",
   "license": "ISC",
   "dependencies": {

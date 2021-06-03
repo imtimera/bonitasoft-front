@@ -6,9 +6,9 @@ const appName = 'Bonitasoft Front-end'
 
 app.set('utils', utils)
 app.get('/', (req, res) => {
-  res.sendFile(__dirname + '/public/html/index.html');
+  res.sendFile(__dirname + '/dist/index.html');
 })
-app.use(express.static(__dirname + '/public'));
+app.use(express.static(__dirname + '/dist'));
 
 app.listen(port, () => {
   console.log(`${appName} app listening at http://localhost:${port}`)
